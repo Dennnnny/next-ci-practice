@@ -9,23 +9,20 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.15.0]
-
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 16.15.0
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "16.15.0"
 
       - name: dependence install
         run: npm ci
 
       - name: Test
         run: npm run test:ci
+
   docker-build-and-push:
     timeout-minutes: 10
     runs-on: ubuntu-latest
@@ -36,7 +33,7 @@ jobs:
       VERSION: ${{ github.sha }}
       PROJECT_ID: wide-hulling-226815
       REGISTRY: asia-east1-docker.pkg.dev
-      FOLDER_NAME: nextproj
+      FOLDER_NAME: nextproj2
     steps:
       - name: Check out code
         uses: actions/checkout@v3
