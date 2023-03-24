@@ -44,8 +44,8 @@ jobs:
         with:
           token_format: access_token
           # credentials_json: ${{secrets.GOOGLE_CREDENTIALS}}
-          workload_identity_provider: "//iam.googleapis.com/projects/910785627085/locations/global/workloadIdentityPools/github-pool/providers/dennnny-provider"
-          service_account: "github@wide-hulling-226815.iam.gserviceaccount.com"
+          workload_identity_provider: projects/910785627085/locations/global/workloadIdentityPools/gh-action-pool/providers/gh-action-provider
+          service_account: gh-action@wide-hulling-226815.iam.gserviceaccount.com
           access_token_lifetime: 300s
 
       - name: Login to Artifact Registry
