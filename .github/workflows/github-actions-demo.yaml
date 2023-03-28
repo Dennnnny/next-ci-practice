@@ -1,8 +1,9 @@
 name: GitHub Actions For Next.js testing
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+
 on:
   pull_request:
-    branches: [main, dev]
+    branches:
+      - dev
 
 jobs:
   test:
