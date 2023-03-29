@@ -31,11 +31,8 @@ jobs:
             ${{ runner.os }}-
 
       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
+        name: if no cache, install dependence
         continue-on-error: true
-        run: npm list
-
-      - name: dependence install
         run: npm ci
 
       - name: Test
