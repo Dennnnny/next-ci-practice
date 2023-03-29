@@ -46,4 +46,9 @@ describe('Home', () => {
   it("add in correctly", () => {
     expect(addTen(2)).toBe(12)
   })
+
+
+  it("add in correctly", () => {
+    expect(addTen(2)).toBe(12)
+  })
 })
