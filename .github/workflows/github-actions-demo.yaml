@@ -1,4 +1,4 @@
-name: GitHub Actions For Next.js testing
+name: GitHub Actions For Next.js testing 
 
 on:
   push:
