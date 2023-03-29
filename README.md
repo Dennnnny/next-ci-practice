@@ -26,3 +26,33 @@ note:
   so I go SA to add more roles. 
   in total I add three roles: Artifact registry writer, service account token creator, storage admin
   
+
+reference:https://gist.github.com/palewire/12c4b2b974ef735d22da7493cf7f4d37
+
+
+
+issue:
+google-github-actions/auth failed with: retry function failed after 1 attempt: failed to generate Google Cloud access token for ***: (403)
+something wrong with wif...
+
+after follow the steps of reference
+it works
+and now I'm going to compare the difference 
+of pool and SA
+
+
+sa: 
+感覺很像是principalSet這一個比較有差， 差別在 repo 前面有沒有放名字 :Dennnnny/next-ci-practice
+而這個東西的設定 是在pool裡面
+
+pool:
+設定了 grant access : only identities matching the filter
+這邊選擇 repository = Dennnnny/next-ci-practice
+
+而這個repository會出現是因為 在 pool設定裡面
+有新增一些對應條件：audience mapping
+attribue.repository = assertion.repository
+看起來也可以設定作者(?) actor(?) 之類的 （？） not sure 
+
+
+
