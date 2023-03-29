@@ -28,9 +28,6 @@ describe('Home', () => {
     expect(addTen(1)).toBe(11);
   })
 
-  it("add in correctly", () => {
-    expect(addTen(1)).toBe(11)
-  })
 
   it("add in correctly", () => {
     expect(addTen(2)).toBe(12)
