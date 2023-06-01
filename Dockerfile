@@ -13,8 +13,8 @@ RUN npm install --production
 # Copy the rest of the app code to the container
 COPY . .
 
-ENV NEXT_PUBLIC_ENV $NEXT_PUBLIC_ENV
-ENV CUSTOM_ENV $CUSTOM_ENV
+ENV NEXT_PUBLIC_ENV=$NEXT_PUBLIC_ENV
+ENV CUSTOM_ENV=$CUSTOM_ENV
 # Build the Next.js app
 RUN npm run build
 
