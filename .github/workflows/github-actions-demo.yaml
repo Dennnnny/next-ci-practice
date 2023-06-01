@@ -33,9 +33,7 @@ jobs:
       VERSION: ${{ github.sha }}
       PROJECT_ID: wide-hulling-226815
       REGISTRY: asia-east1-docker.pkg.dev
-      FOLDER_NAME: nextproj4
-      NEXT_PUBLIC_ENV: ${{secrets.NEXT_PUBLIC_ENV}}
-      CUSTOM_ENV: ${{secrets.CUSTOM_ENV}}
+      FOLDER_NAME: nextproj5
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -67,5 +65,5 @@ jobs:
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.PROJECT_ID }}/github/${{ env.FOLDER_NAME }}:lastet
           build-args: |
-            NEXT_PUBLIC_ENV=tester
+            NEXT_PUBLIC_ENV="tester"
             CUSTOM_ENV=hello
