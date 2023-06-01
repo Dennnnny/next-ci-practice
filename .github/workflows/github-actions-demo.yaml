@@ -71,8 +71,8 @@ jobs:
       - name: Tag Docker image and push to Google Artifact Registry
         uses: docker/build-push-action@v4
         env:
-          NEXT_PUBLIC_ENV: ${{secret.NEXT_PUBLIC_ENV}}
-          CUSTOM_ENV: ${{secret.CUSTOM_ENV}}
+          NEXT_PUBLIC_ENV: ${{secrets.NEXT_PUBLIC_ENV}}
+          CUSTOM_ENV: ${{secrets.CUSTOM_ENV}}
         with:
           context: .
           file: ./Dockerfile
