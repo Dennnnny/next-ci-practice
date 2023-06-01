@@ -44,7 +44,9 @@ jobs:
       VERSION: ${{ github.sha }}
       PROJECT_ID: wide-hulling-226815
       REGISTRY: asia-east1-docker.pkg.dev
-      FOLDER_NAME: nextproj3
+      FOLDER_NAME: nextproj4
+      NEXT_PUBLIC_ENV: ${{secrets.NEXT_PUBLIC_ENV}}
+      CUSTOM_ENV: ${{secrets.CUSTOM_ENV}}
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -70,9 +72,6 @@ jobs:
 
       - name: Tag Docker image and push to Google Artifact Registry
         uses: docker/build-push-action@v4
-        env:
-          NEXT_PUBLIC_ENV: ${{secrets.NEXT_PUBLIC_ENV}}
-          CUSTOM_ENV: ${{secrets.CUSTOM_ENV}}
         with:
           context: .
           file: ./Dockerfile
