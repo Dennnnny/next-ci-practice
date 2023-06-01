@@ -77,3 +77,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.PROJECT_ID }}/github/${{ env.FOLDER_NAME }}:lastet
+          build-args: |
+            NEXT_PUBLIC_ENV=tester
+            CUSTOM_ENV=hello
