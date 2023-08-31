@@ -1,4 +1,4 @@
-name: Trigger Workflow Dispatch
+name: Tester Trigger Workflow Dispatch
 
 on:
   push:
@@ -14,8 +14,8 @@ jobs:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger repository dispatch
-        uses: peter-evans/repository-dispatch@v2
+      - name: Invoke workflow with inputs
+        uses: benc-uk/workflow-dispatch@v1
         with:
-          event-type: docker
-          client-payload: '{"folder_name": "tester"}'
+          workflow: docker.yaml
+          inputs: '{ "folder_name": "tester", "something": true }'

@@ -2,8 +2,10 @@
 name: Build And Push Docker Image
 
 on:
-  workflow_dispatch:
-    types: [ "docker" ]
+  workflow_run:
+    workflows: [ "Tester Trigger Workflow Dispatch" ]
+    types: 
+      - completed
 
 jobs:
   build-docker-image-and-push-to-gar:
@@ -16,7 +18,7 @@ jobs:
       VERSION: ${{ github.sha }}
       PROJECT_ID: wide-hulling-226815
       REGISTRY: asia-east1-docker.pkg.dev
-      FOLDER_NAME: ${{github.event.client_payload.folder_name}}-management-system
+      FOLDER_NAME: ${{ github.event.inputs.folder_name }}-management-system
       WORKLOAD_IDENTITY_PROVIDER: projects/910785627085/locations/global/workloadIdentityPools/github-pool/providers/dennnny-provider
       SERVICE_ACCOUNT:  ${{ secrets.SERVICE_ACCOUNT }} 
     steps:
