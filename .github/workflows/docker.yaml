@@ -6,7 +6,7 @@ on:
     types: [ "docker" ]
 
 jobs:
-  build-docker-image-and-push-to-gar
+  build-docker-image-and-push-to-gar:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     permissions:
