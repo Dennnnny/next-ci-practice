@@ -18,4 +18,5 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: docker.yaml
+          ref: ${{ github.event.ref }}
           inputs: '{ "folder_name": "tester", "something": true }'
