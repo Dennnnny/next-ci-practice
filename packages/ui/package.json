@@ -1,0 +1,53 @@
+{
+	"name": "ui",
+	"version": "0.0.0",
+	"license": "MIT",
+	"main": "./index.tsx",
+	"types": "./index.tsx",
+	"scripts": {
+		"lint": "eslint \"**/*.ts*\"",
+		"dev": "storybook dev -p 6006",
+		"test": "jest"
+	},
+	"jest": {
+		"preset": "jest-presets/jest/node"
+	},
+	"dependencies": {
+		"@chakra-ui/icons": "^2.0.17",
+		"@chakra-ui/react": "^2.5.0",
+		"@chakra-ui/theme-tools": "^2.0.17",
+		"@emotion/react": "^11.9.0",
+		"@emotion/styled": "^11.9.0",
+		"framer-motion": "^6.3.0",
+		"react-beautiful-dnd": "^13.1.1",
+		"react-multi-date-picker": "^4.1.2",
+		"react-select": "^5.7.4",
+		"hooks": "*",
+		"react-hook-form": "^7.43.1",
+		"react-virtualized-auto-sizer": "^1.0.15",
+		"react-window": "^1.8.9"
+	},
+	"devDependencies": {
+		"@storybook/addon-essentials": "^7.0.9",
+		"@storybook/addon-interactions": "^7.0.9",
+		"@storybook/addon-links": "^7.0.9",
+		"@storybook/blocks": "^7.0.9",
+		"@storybook/nextjs": "^7.0.9",
+		"@storybook/react": "^7.0.9",
+		"@storybook/react-webpack5": "^7.0.9",
+		"@storybook/testing-library": "^0.0.14-next.2",
+		"@types/react": "^17.0.37",
+		"@types/react-beautiful-dnd": "^13.1.4",
+		"@types/react-dom": "^17.0.11",
+		"eslint": "^7.32.0",
+		"eslint-config-custom": "*",
+		"react": "^18.2.0",
+		"storybook": "^7.0.9",
+		"tsconfig": "*",
+		"typescript": "^4.5.2",
+		"@types/react-window": "^1.8.5",
+		"jest": "^26.6.3",
+		"jest-presets": "*",
+		"@types/jest": "^26.0.22"
+	}
+}

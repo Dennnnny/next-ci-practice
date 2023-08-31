@@ -1,0 +1,14 @@
+{
+  "name": "types",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\"",
+    "dev": "storybook dev -p 6006"
+  },
+  "dependencies": {
+    "@tanstack/react-table": "^8.7.9"
+  }
+}
