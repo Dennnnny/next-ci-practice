@@ -1,0 +1,19 @@
+{
+  "name": "utils",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\""
+  },
+  "dependencies": {
+    "date-fns": "^2.29.3",
+    "next-auth": "^4.22.1",
+    "node-fetch": "^3.3.2",
+    "ramda": "^0.28.0"
+  },
+  "devDependencies": {
+    "@types/ramda": "^0.28.22"
+  }
+}

@@ -1,0 +1,21 @@
+name: Trigger Workflow Dispatch
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+    paths:
+      - 'apps/tester/**'
+      - 'packages/**'
+
+jobs:
+  trigger:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger repository dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: docker
+          client-payload: '{"folder_name": "tester"}'
