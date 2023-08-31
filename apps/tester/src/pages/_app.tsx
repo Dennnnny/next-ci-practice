@@ -25,6 +25,7 @@ if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
 function MyApp({ Component, pageProps: { session, ...pageProps } }: Props) {
 	const getLayout = Component.getLayout ?? ((page: ReactNode) => page);
 
+	// for testing
 	return (
 		<>
 			<Head>
