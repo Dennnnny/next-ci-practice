@@ -13,10 +13,21 @@ jobs:
   trigger:
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    env:
+      GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
     steps:
+      - name: Set production enviornment variable 
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          echo "MODE=production" >> $GITHUB_ENV
+      - name: Set staging enviornment variable
+        if: ${{ github.ref == 'refs/heads/dev' }}
+        run: |
+          echo "MODE=staging" >> $GITHUB_ENV
       - name: Invoke workflow with inputs
         uses: actions/trigger-workflow@v1
         with:
-          workflow: docker.yaml
-          ref: ${{ github.event.ref }}
-          inputs: '{ "folder_name": "tester", "something": true }'
+          token: ${{ env.GITHUB_ACCESS_TOKEN }}
+          event-type: docker
+          client-payload: '{"folder_name": "invos", "mode": "${{ env.MODE }}"}'
+
