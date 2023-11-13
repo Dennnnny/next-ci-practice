@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 
 const Index = () => {
 	const route = useRouter();
-	// test
 	return <h1 color="text">hello world</h1>;
 };
 
