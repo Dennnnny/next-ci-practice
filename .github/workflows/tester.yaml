@@ -25,9 +25,8 @@ jobs:
         run: |
           echo "MODE=staging" >> $GITHUB_ENV
       - name: Invoke workflow with inputs
-        uses: peter-evans/repository-dispatch@v2
+        uses: benc-uk/workflow-dispatch@v1
         with:
-          token: ${{ env.GITHUB_ACCESS_TOKEN }}
-          event-type: docker
-          client-payload: '{"folder_name": "invos", "mode": "${{ env.MODE }}"}'
+          workflow: docker.yaml
+          inputs: '{ "mode": "${{ env.MODE }}", "folder_name":"tester" }'
 
