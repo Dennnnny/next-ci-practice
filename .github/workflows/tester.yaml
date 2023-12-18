@@ -28,5 +28,5 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: docker.yaml
-          inputs: '{ "mode": "${{ env.MODE }}" }'
+          inputs: '{ "mode": "${{ env.MODE }}", "folder_name":"tester" }'
 
