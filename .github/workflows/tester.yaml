@@ -24,7 +24,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/dev' }}
         run: |
           echo "MODE=staging" >> $GITHUB_ENV
-      - name: Invoke workflow without inputs
+      - name: Invoke workflow with inputs
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: docker.yaml
